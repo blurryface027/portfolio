@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Mail, Linkedin, ArrowRight, ExternalLink } from 'lucide-react';
 
+
 const experiences = [
   { year: '2023', role: 'Creative Director', company: 'Fisga' },
   { year: '2021', role: 'Brand Consultant', company: 'Freelance' },
@@ -83,7 +84,7 @@ function App() {
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-950/90 backdrop-blur-md' : 'bg-transparent'}`}>
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-xl font-bold">KS</div>
+          <img src="/mylogo2.png" alt="Logo" className="h-8 w-auto" />
           <div className="hidden md:flex space-x-8">
             <button 
               onClick={() => scrollToSection('hero')}
