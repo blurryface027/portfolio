@@ -129,7 +129,7 @@ function App() {
               Hi, I'm Krishna Sharma — a creative professional blending design and code. I craft unique brand identities through
               <span className="text-white font-medium"> Branding, Typography, Color Theory, and Creative Direction. </span>
               and develop responsive, interactive websites with
-              <span className="text-white font-medium"> HTML, CSS, JavaScript, React.js, Next.js, Angular.js, Tailwind CSS, and ShadCN UI, </span>
+              <span className="text-white font-medium"> HTML, CSS, JavaScript, React.js, Next.js, Angular.js, Tailwind CSS, and ShadCN UI. </span>
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in-up" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
