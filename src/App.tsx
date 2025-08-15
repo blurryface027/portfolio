@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import LogoRail from "./components/LogoRail";
 import { ChevronDown, Mail, Linkedin, ArrowRight, ExternalLink } from 'lucide-react';
 
 const experiences = [
-  { year: '2023', role: 'Creative Director', company: 'Fisga' },
-  { year: '2021', role: 'Brand Consultant', company: 'Freelance' },
-  { year: '2020', role: 'Junior Brand Designer', company: 'Creativio Agency' },
-  { year: '2019', role: 'Design Intern', company: 'Luxe Brands' },
+  { year: '2025', role: 'Web Development Intern', company: 'Pinnacle Labs' },
+  { year: '2025', role: 'Graphic Designer Intern', company: 'InAmigos Foundation' },
+  { year: '2023', role: 'Frontend Development', company: 'Self-Taught' },
+  { year: '2021', role: 'Freelance Video Editor', company: 'Independent' },
+  { year: '2020', role: 'Freelance Graphic Designer', company: 'Independent' },
 ];
 
 const projects = [
@@ -55,12 +57,11 @@ function App() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -68,22 +69,18 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white overflow-hidden">
-      {/* Background Elements */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute top-20 right-20 text-8xl font-bold text-zinc-900 opacity-20 select-none">
-          KRX
-        </div>
-        <div className="absolute bottom-40 left-20 text-6xl font-bold text-zinc-900 opacity-15 select-none">
-          ALPHA
-        </div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-zinc-800 rounded-full opacity-10"></div>
-      </div>
-
+    <div className="min-h-screen bg-zinc-950 text-white overflow-hidden font-inter">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-950/90 backdrop-blur-md' : 'bg-transparent'}`}>
+      <nav
+  className={`fixed top-0 w-full z-50 transition-all duration-300
+    ${isScrolled
+      ? 'bg-zinc-900/1 backdrop-blur-lg shadow-lg'
+      : 'bg-transparent'
+    }`}
+>
+
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-xl font-bold">KS</div>
+          <img src="/mylogo2.png" alt="Logo" className="h-8 w-auto" />
           <div className="hidden md:flex space-x-8">
             <button 
               onClick={() => scrollToSection('hero')}
@@ -123,18 +120,18 @@ function App() {
               <span className="text-stone-300">Sharma</span>
             </h1>
             <p className="text-xl md:text-2xl text-stone-400 font-light mb-2">
-              Graphic & Brand Identity Designer
+              Creative Designer & Frontend Developer
             </p>
           </div>
           
           <div className="mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
             <p className="text-lg md:text-xl text-stone-300 leading-relaxed max-w-3xl mx-auto">
-              Hi, I'm Krishna Sharma, a graphic designer passionate about giving brands their unique identity. 
-              Logo specialist, dedicated to crafting distinctive visual identities with expertise in 
-              <span className="text-white font-medium"> Branding, Typography, Color Theory, and Creative Direction.</span>
+              Hi, I'm Krishna Sharma — a creative professional blending design and code. I craft unique brand identities through
+              <span className="text-white font-medium"> Branding, Typography, Color Theory, and Creative Direction. </span>
+              and develop responsive, interactive websites with
+              <span className="text-white font-medium"> HTML, CSS, JavaScript, React.js, Next.js, Angular.js, Tailwind CSS, and ShadCN UI, </span>
             </p>
           </div>
-
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in-up" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
             <button 
               onClick={() => scrollToSection('works')}
@@ -150,7 +147,6 @@ function App() {
               Get In Touch
             </button>
           </div>
-
           <button 
             onClick={() => scrollToSection('works')}
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in-up animate-bounce" 
@@ -161,6 +157,8 @@ function App() {
         </div>
       </section>
 
+      <LogoRail />
+
       {/* Selected Works Section */}
       <section id="works" className="py-20 px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -168,7 +166,6 @@ function App() {
             <h2 className="text-5xl md:text-6xl font-bold mb-6">Selected Works</h2>
             <p className="text-xl text-stone-400">Recent projects from 2021 to 2024</p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <div 
@@ -206,7 +203,6 @@ function App() {
             <h2 className="text-5xl md:text-6xl font-bold mb-6">Experience</h2>
             <p className="text-xl text-stone-400">Professional journey and growth</p>
           </div>
-
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-stone-600 to-transparent"></div>
@@ -254,6 +250,7 @@ function App() {
               <Linkedin className="w-5 h-5" />
               LinkedIn
             </a>
+            
           </div>
         </div>
       </section>
